@@ -11,16 +11,18 @@
 
 	<!-- 系统运行环境参数初始化 -->
 	<context:annotation-config />
+	<context:component-scan base-package="cn.biz" />
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations" value="/WEB-INF/config/cn/dev/sys_config.properties" />
 	</bean>
-	<!-- 数据源配置 -->
+	
+	<!-- 数据源配置 
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="poolName" value="springHikariCP" />
 		<property name="minimumIdle" value="5" />
 		<property name="maximumPoolSize" value="5" />
-		<!-- <property name="validationTimeout" value="15000" /> -->
+		 <property name="validationTimeout" value="15000" />
 		<property name="connectionTimeout" value="150000" />
 
 		<property name="connectionTestQuery" value="SELECT 1" />
@@ -37,12 +39,14 @@
 			</props>
 		</property>
 	</bean>
-
+-->
+<!-- 
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
 		destroy-method="close">
 		<constructor-arg ref="hikariConfig" />
 	</bean>
-	<!-- jdbctemple 配置 -->
+	 -->
+	<!-- jdbctemple 配置
 
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
 		abstract="false" lazy-init="false" autowire="default">
@@ -50,13 +54,12 @@
 			<ref bean="dataSource" />
 		</property>
 	</bean>
-
+ -->
 	<!-- Mybatis配置 <import resource="ac-mybatis.xml" /> -->
 
 	<!-- Redis配置 <import resource="ac-redis.xml" /> -->
 
 	<!-- 装载Service,DAO,Aspect实例 -->
-	<context:component-scan base-package="cn.zsy.webim" />
 
 	<!-- 配置线程池 -->
 	<bean id="loginTaskExecutor"

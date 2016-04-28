@@ -36,7 +36,7 @@ public class AccessTokenUtil {
 		}
 	}
 
-	@Scheduled(cron = "0 0 */1.5 * * ?")
+	@Scheduled(cron = "0 0 * * * ?")
 	public void run() {
 		logger.info("AccessTokenUtil trigger...");
 		AccessToken tk = getToken();
