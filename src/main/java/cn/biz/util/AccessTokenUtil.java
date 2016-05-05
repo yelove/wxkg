@@ -19,6 +19,9 @@ public class AccessTokenUtil {
 	private static AccessToken token;
 
 	public static AccessToken getToken() {
+		if(null==token){
+			refreshToken();
+		}
 		return token;
 	}
 
