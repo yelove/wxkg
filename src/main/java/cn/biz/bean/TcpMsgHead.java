@@ -23,7 +23,7 @@ public class TcpMsgHead {
 		this.msglength = checkArray(msgbuf, 11, 14);
 		this.msgtype = checkArray(msgbuf, 15, 16);
 		this.bxid = checkArray(msgbuf, 17, 26);
-		this.other = checkArray(msgbuf, 27, msgbuf.length);
+		this.other = checkArray(msgbuf, 27, msgbuf.length-1);
 	}
 
 	public TcpMsgHead() {
