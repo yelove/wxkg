@@ -18,6 +18,8 @@
 
 
 	<context:annotation-config />
+	<!-- 默认的注解映射的支持 -->
+	<mvc:annotation-driven />
 	<context:component-scan base-package="cn.biz" />
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -78,6 +80,12 @@
 
 	<!-- <mvc:interceptors> <bean class="cn.zsy.webim.interceptor.AuthInterceptor" 
 		/> </mvc:interceptors> -->
+
+	<mvc:resources mapping="/images/**" location="/images/" />
+
+	<mvc:resources mapping="/js/**" location="/js/" />
+
+	<mvc:resources mapping="/css/**" location="/css/" />
 
 
 </beans>

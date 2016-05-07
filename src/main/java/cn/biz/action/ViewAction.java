@@ -49,7 +49,8 @@ public class ViewAction {
 	public String wxlogview(HttpServletRequest request) {
 		String code = request.getParameter(CommonStr.CODE);
 		log.info("code is {}", code);
-		OPID_AccessToken opidtk = MpApi.getOPIDtoken(code);
+//		OPID_AccessToken opidtk = MpApi.getOPIDtoken(code);
+		OPID_AccessToken opidtk = null;
 		if (null != opidtk) {
 			request.setAttribute(CommonStr.OPENID, opidtk.getOpenid());
 		} else {

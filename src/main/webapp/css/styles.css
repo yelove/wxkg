@@ -1,0 +1,32 @@
+body {
+    
+    margin:0px;
+    background-color:#888;
+}
+
+#centered{
+    width:175px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:160px;
+    height:300px;
+}
+
+#topToolbar{
+    width:100%;
+    background:#c0c0c0; border-bottom:2px solid #409F89;
+    position:fixed; top:0; left:0;
+    _position:absolute; _top:expression(documentElement.scrollTop);
+}
+
+#bottomToolbar{
+    width:100%;
+    background:#c0c0c0; border-top:2px solid #409F89;
+    position:fixed; bottom:0; left:0;
+    _position:absolute; _top:expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight);
+    /*
+        document.body.scrollTop 网页滚动的距离
+        document.body.clientHeight 网页可见区域高
+        this.offsetHeight 当前元素的高度
+    */
+}
